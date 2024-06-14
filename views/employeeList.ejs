@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee List</h1>
+        <ul>
+            <% employees.forEach(employee => { %>
+          
+                <li>
+                    <span><%= employee.name %> (<%= employee.position %>)</span>
+                    <div class="action-buttons">
+                        <a href="/admin/employees/delete/<%= employee.id %>" class="button-delete">Delete</a>
+                        <a href="/admin/employees/edit/<%= employee.id %>" class="button-edit">Edit</a>
+                    </div>
+                </li>
+
+            <% }) %>
+        </ul>
+        <form action="/admin/employees/add" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="position" placeholder="Position" required>
+            <button type="submit">Add Employee</button>
+        </form>
+    </div>
+</body>
+</html>

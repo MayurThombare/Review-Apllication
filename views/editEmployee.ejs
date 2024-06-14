@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Employee</h1>
+        <form action="/admin/employees/update/<%= employee.id %>" method="post">
+            <input type="text" name="name" placeholder="Name" value="<%= employee.name %>" required>
+            <input type="email" name="email" placeholder="Email" value="<%= employee.email %>" required>
+            <input type="text" name="position" placeholder="Position" value="<%= employee.position %>" required>
+            <button type="submit">Update Employee</button>
+        </form>
+    </div>
+</body>
+</html>
