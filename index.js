@@ -6,14 +6,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { Pool } = require('pg');
+require('dotenv').config();
+
 
 const app = express();
 const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "performance_review",
-    password: "admin@123",
-    port: 5432,
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT,
 });
 
 // Middleware
